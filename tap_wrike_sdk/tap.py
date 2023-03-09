@@ -16,29 +16,62 @@ class Tapwrike(Tap):
 
     # TODO: Update this section with the actual config values you expect:
     config_jsonschema = th.PropertiesList(
+        # th.Property(
+        #     "auth_token",
+        #     th.StringType,
+        #     required=True,
+        #     secret=True,  # Flag config as protected.
+        #     description="The token to authenticate against the API service",
+        # ),
+        # th.Property(
+        #     "project_ids",
+        #     th.ArrayType(th.StringType),
+        #     required=True,
+        #     description="Project IDs to replicate",
+        # ),
+        # th.Property(
+        #     "start_date",
+        #     th.DateTimeType,
+        #     description="The earliest record date to sync",
+        # ),
         th.Property(
-            "auth_token",
+            "api_url",
             th.StringType,
-            required=True,
-            secret=True,  # Flag config as protected.
-            description="The token to authenticate against the API service",
+            default="https://www.wrike.com/api",
+            description="The url for the API service",
         ),
         th.Property(
-            "project_ids",
-            th.ArrayType(th.StringType),
+            "token",
+            th.StringType,
             required=True,
-            description="Project IDs to replicate",
+            secret=True,
+            description="Access Token",
+        ),
+        th.Property(
+            "client_id",
+            th.StringType,
+            required=True,
+            secret=False,
+            description="Client ID for API call.",
+        ),
+        th.Property(
+            "client_secret",
+            th.StringType,
+            required=True,
+            secret=True,
+            description="Client secret to provide for API calls",
+        ),
+        th.Property(
+            "refresh_token",
+            th.StringType,
+            required=True,
+            secret=True,
+            description="Refresh token for OAuth",
         ),
         th.Property(
             "start_date",
             th.DateTimeType,
             description="The earliest record date to sync",
-        ),
-        th.Property(
-            "api_url",
-            th.StringType,
-            default="https://api.mysample.com",
-            description="The url for the API service",
         ),
     ).to_dict()
 
@@ -49,8 +82,7 @@ class Tapwrike(Tap):
             A list of discovered streams.
         """
         return [
-            streams.GroupsStream(self),
-            streams.UsersStream(self),
+            streams.TimelogsStream(self),
         ]
 
 
