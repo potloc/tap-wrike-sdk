@@ -9,6 +9,7 @@ from typing import Any, Callable, Iterable
 import requests
 from singer_sdk.helpers.jsonpath import extract_jsonpath
 from singer_sdk.streams import RESTStream
+from singer_sdk.authenticators import BearerTokenAuthenticator
 
 from tap_wrike_sdk.auth import wrikeAuthenticator
 
@@ -41,8 +42,18 @@ class wrikeStream(RESTStream):
         Returns:
             An authenticator instance.
         """
-        return wrikeAuthenticator.create_for_stream(self)
+        client_id = self.config.get("client_id", None)
+        client_secret = self.config.get("client_secret", None)
+        refresh_token = self.config.get("refresh_token", None)
+        access_token = self.config.get("token", None)
 
+        if client_id and client_secret and refresh_token:
+            return wrikeAuthenticator.create_for_stream(self)
+
+        return BearerTokenAuthenticator.create_for_stream(
+            self,
+            token=access_token,
+        )
     @property
     def http_headers(self) -> dict:
         """Return the http headers needed.
