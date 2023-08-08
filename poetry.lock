@@ -407,9 +407,9 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "packaging"
-version = "23.0"
+version = "23.1"
 description = "Core utilities for Python packages"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -669,7 +669,7 @@ python-versions = ">=2.5, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "singer-sdk"
-version = "0.21.0"
+version = "0.31.0"
 description = "A framework for building Singer taps"
 category = "main"
 optional = false
@@ -678,7 +678,7 @@ python-versions = ">=3.7.1,<3.12"
 [package.dependencies]
 backoff = ">=2.0.0,<3.0"
 click = ">=8.0,<9.0"
-cryptography = ">=3.4.6,<40.0.0"
+cryptography = ">=3.4.6,<42.0.0"
 fs = ">=2.4.16,<3.0.0"
 importlib-metadata = {version = "<5.0.0", markers = "python_version < \"3.8\""}
 importlib-resources = {version = "5.12.0", markers = "python_version < \"3.9\""}
@@ -687,20 +687,22 @@ joblib = ">=1.0.1,<2.0.0"
 jsonpath-ng = ">=1.5.3,<2.0.0"
 jsonschema = ">=4.16.0,<5.0.0"
 memoization = ">=0.3.2,<0.5.0"
+packaging = ">=23.1"
 pendulum = ">=2.1.0,<3.0.0"
 PyJWT = ">=2.4,<3.0"
 pytest = {version = ">=7.2.1,<8.0.0", optional = true, markers = "extra == \"testing\""}
 pytest-durations = {version = ">=1.2.0,<2.0.0", optional = true, markers = "extra == \"testing\""}
 python-dotenv = ">=0.20,<0.22"
-pytz = ">=2022.2.1,<2023.0.0"
+pytz = ">=2022.2.1,<2024.0.0"
 PyYAML = ">=6.0,<7.0"
 requests = ">=2.25.1,<3.0.0"
 simplejson = ">=3.17.6,<4.0.0"
-sqlalchemy = ">=1.4,<2.0"
+sqlalchemy = ">=1.4,<3.0"
 typing-extensions = ">=4.2.0,<5.0.0"
+urllib3 = ">=1.26,<2"
 
 [package.extras]
-docs = ["furo (>=2022.12.7,<2023.0.0)", "myst-parser (>=0.17.2,<0.19.0)", "sphinx (>=4.5,<6.0)", "sphinx-autobuild (>=2021.3.14,<2022.0.0)", "sphinx-copybutton (>=0.3.1,<0.6.0)", "sphinx-reredirects (>=0.1.1,<0.2.0)"]
+docs = ["furo (>=2022.12.7,<2024.0.0)", "myst-parser (>=0.17.2,<1.1.0)", "sphinx (>=4.5,<6.0)", "sphinx-autobuild (>=2021.3.14,<2022.0.0)", "sphinx-copybutton (>=0.3.1,<0.6.0)", "sphinx-inline-tabs (>=2023.4.21)", "sphinx-reredirects (>=0.1.1,<0.2.0)"]
 s3 = ["fs-s3fs (>=1.1.1,<2.0.0)"]
 testing = ["pytest (>=7.2.1,<8.0.0)", "pytest-durations (>=1.2.0,<2.0.0)"]
 
@@ -827,7 +829,7 @@ s3 = ["fs-s3fs"]
 [metadata]
 lock-version = "1.1"
 python-versions = "<3.12,>=3.7.1"
-content-hash = "23412355e09e3a194271f933a93d39e2beb04d3afd5546603cc47d9f83d55441"
+content-hash = "50bc872dab09fb78241733665998dedb4ee796d58ec3fe75b719cffec0493a6c"
 
 [metadata.files]
 appdirs = [
@@ -1228,8 +1230,8 @@ mypy-extensions = [
     {file = "mypy_extensions-1.0.0.tar.gz", hash = "sha256:75dbf8955dc00442a438fc4d0666508a9a97b6bd41aa2f0ffe9d2f2725af0782"},
 ]
 packaging = [
-    {file = "packaging-23.0-py3-none-any.whl", hash = "sha256:714ac14496c3e68c99c29b00845f7a2b85f3bb6f1078fd9f72fd20f0570002b2"},
-    {file = "packaging-23.0.tar.gz", hash = "sha256:b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"},
+    {file = "packaging-23.1-py3-none-any.whl", hash = "sha256:994793af429502c4ea2ebf6bf664629d07c1a9fe974af92966e4b8d2df7edc61"},
+    {file = "packaging-23.1.tar.gz", hash = "sha256:a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"},
 ]
 pathspec = [
     {file = "pathspec-0.11.0-py3-none-any.whl", hash = "sha256:3a66eb970cbac598f9e5ccb5b2cf58930cd8e3ed86d393d541eaf2d8b1705229"},
@@ -1477,8 +1479,8 @@ simplejson = [
     {file = "simplejson-3.18.3.tar.gz", hash = "sha256:ebb53837c5ffcb6100646018565d3f1afed6f4b185b14b2c9cbccf874fe40157"},
 ]
 singer-sdk = [
-    {file = "singer_sdk-0.21.0-py3-none-any.whl", hash = "sha256:b789e0ede3f6f2bdeac5d2554f6c176ccdcbe25c3c1bf7a91d2915b436980fe3"},
-    {file = "singer_sdk-0.21.0.tar.gz", hash = "sha256:33404cc7d49f4dc0151eb30278e33285262c5b5a911533a19327787f11c2934f"},
+    {file = "singer_sdk-0.31.0-py3-none-any.whl", hash = "sha256:aa9329bd7e26f9e2bd59332468e064dd38f6df2dd6b7445e047d8008acd0dd65"},
+    {file = "singer_sdk-0.31.0.tar.gz", hash = "sha256:de8fdf00967dc13b4073dddad499799df2a1273806406b765ba55b671ea18b8a"},
 ]
 six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
