@@ -10,6 +10,7 @@ from tap_wrike_sdk.client import wrikeStream
 
 from tap_wrike_sdk.schemas import (
     Timelogs,
+    Tasks,
 )
 
 
@@ -28,4 +29,20 @@ class TimelogsStream(wrikeStream):
     ) -> Dict[str, Any]:
         params: dict = {}
         params["fields"] = '[\"billingType\"]'
+        return params
+
+class TasksStream(wrikeStream):
+    _LOG_REQUEST_METRIC_URLS = True
+    name = "tasks"
+    path = "/v4/tasks"
+    primary_keys = ["id"]
+    records_jsonpath = "$.data[*]"
+    replication_method = "INCREMENTAL"
+    replication_key = "updatedDate"
+    schema = Tasks.schema
+
+    def get_url_params(
+        self, context: Optional[dict], next_page_token: Optional[Any]
+    ) -> Dict[str, Any]:
+        params: dict = {}
         return params

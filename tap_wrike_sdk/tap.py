@@ -83,6 +83,7 @@ class Tapwrike(Tap):
         """
         return [
             streams.TimelogsStream(self),
+            streams.TasksStream(self),
         ]
 
 
