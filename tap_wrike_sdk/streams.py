@@ -15,7 +15,6 @@ from tap_wrike_sdk.schemas import (
 
 
 class TimelogsStream(wrikeStream):
-    _LOG_REQUEST_METRIC_URLS = True
     name = "timelogs"
     path = "/v4/timelogs"
     primary_keys = ["id"]
@@ -32,7 +31,6 @@ class TimelogsStream(wrikeStream):
         return params
 
 class TasksStream(wrikeStream):
-    _LOG_REQUEST_METRIC_URLS = True
     name = "tasks"
     path = "/v4/tasks"
     primary_keys = ["id"]
@@ -45,4 +43,6 @@ class TasksStream(wrikeStream):
         self, context: Optional[dict], next_page_token: Optional[Any]
     ) -> Dict[str, Any]:
         params: dict = {}
+        params["fields"] = "[\"authorIds\",\"hasAttachments\",\"attachmentCount\",\"parentIds\",\"superParentIds\",\"sharedIds\",\"responsibleIds\",\"responsiblePlaceholderIds\",\"description\",\"briefDescription\",\"recurrent\",\"superTaskIds\",\"subTaskIds\",\"dependencyIds\",\"metadata\",\"customFields\",\"effortAllocation\",\"billingType\"]"
+        params["pageSize"] = 1000
         return params
