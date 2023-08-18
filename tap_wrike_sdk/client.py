@@ -33,7 +33,7 @@ class wrikeStream(RESTStream):
         return self.config["api_url"]
 
     records_jsonpath = "$[*]"  # Or override `parse_response`.
-    next_page_token_jsonpath = "$.next_page"  # Or override `get_next_page_token`.
+    next_page_token_jsonpath = "$.nextPageToken"  # Or override `get_next_page_token`.
 
     @cached_property
     def authenticator(self) -> _Auth:
@@ -110,10 +110,7 @@ class wrikeStream(RESTStream):
         """
         params: dict = {}
         if next_page_token:
-            params["page"] = next_page_token
-        if self.replication_key:
-            params["sort"] = "asc"
-            params["order_by"] = self.replication_key
+            params["nextPageToken"] = next_page_token
         return params
 
     def prepare_request_payload(
