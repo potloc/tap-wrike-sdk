@@ -29,6 +29,9 @@ plugins:
           kind: password
         - name: start_date
           value: "2010-01-01T00:00:00Z"
+      select:
+        - tasks.*
+        - timelogs.*
   loaders:
     - name: target-jsonl
       variant: andyh1203
