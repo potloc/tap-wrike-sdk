@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from singer_sdk import typing as th  # JSON Schema typing helpers
+from typing import Any, Dict, Optional
 
 from tap_wrike_sdk.client import wrikeStream
 
@@ -26,7 +26,7 @@ class TimelogsStream(wrikeStream):
     def get_url_params(
         self, context: Optional[dict], next_page_token: Optional[Any]
     ) -> Dict[str, Any]:
-        params: dict = {}
+        params = super().get_url_params(context, next_page_token)
         params["fields"] = '[\"billingType\"]'
         return params
 
@@ -42,7 +42,7 @@ class TasksStream(wrikeStream):
     def get_url_params(
         self, context: Optional[dict], next_page_token: Optional[Any]
     ) -> Dict[str, Any]:
-        params: dict = {}
+        params = super().get_url_params(context, next_page_token)
         params["fields"] = "[\"authorIds\",\"hasAttachments\",\"attachmentCount\",\"parentIds\",\"superParentIds\",\"sharedIds\",\"responsibleIds\",\"responsiblePlaceholderIds\",\"description\",\"briefDescription\",\"recurrent\",\"superTaskIds\",\"subTaskIds\",\"dependencyIds\",\"metadata\",\"customFields\",\"effortAllocation\",\"billingType\"]"
         params["pageSize"] = 1000
         return params
