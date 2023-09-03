@@ -409,7 +409,7 @@ python-versions = ">=3.5"
 name = "packaging"
 version = "23.1"
 description = "Core utilities for Python packages"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -668,7 +668,7 @@ python-versions = ">=2.5, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "singer-sdk"
-version = "0.31.0"
+version = "0.21.0"
 description = "A framework for building Singer taps"
 category = "main"
 optional = false
@@ -677,7 +677,7 @@ python-versions = ">=3.7.1,<3.12"
 [package.dependencies]
 backoff = ">=2.0.0,<3.0"
 click = ">=8.0,<9.0"
-cryptography = ">=3.4.6,<42.0.0"
+cryptography = ">=3.4.6,<40.0.0"
 fs = ">=2.4.16,<3.0.0"
 importlib-metadata = {version = "<5.0.0", markers = "python_version < \"3.8\""}
 importlib-resources = {version = "5.12.0", markers = "python_version < \"3.9\""}
@@ -686,22 +686,20 @@ joblib = ">=1.0.1,<2.0.0"
 jsonpath-ng = ">=1.5.3,<2.0.0"
 jsonschema = ">=4.16.0,<5.0.0"
 memoization = ">=0.3.2,<0.5.0"
-packaging = ">=23.1"
 pendulum = ">=2.1.0,<3.0.0"
 PyJWT = ">=2.4,<3.0"
 pytest = {version = ">=7.2.1,<8.0.0", optional = true, markers = "extra == \"testing\""}
 pytest-durations = {version = ">=1.2.0,<2.0.0", optional = true, markers = "extra == \"testing\""}
 python-dotenv = ">=0.20,<0.22"
-pytz = ">=2022.2.1,<2024.0.0"
+pytz = ">=2022.2.1,<2023.0.0"
 PyYAML = ">=6.0,<7.0"
 requests = ">=2.25.1,<3.0.0"
 simplejson = ">=3.17.6,<4.0.0"
-sqlalchemy = ">=1.4,<3.0"
+sqlalchemy = ">=1.4,<2.0"
 typing-extensions = ">=4.2.0,<5.0.0"
-urllib3 = ">=1.26,<2"
 
 [package.extras]
-docs = ["furo (>=2022.12.7,<2024.0.0)", "myst-parser (>=0.17.2,<1.1.0)", "sphinx (>=4.5,<6.0)", "sphinx-autobuild (>=2021.3.14,<2022.0.0)", "sphinx-copybutton (>=0.3.1,<0.6.0)", "sphinx-inline-tabs (>=2023.4.21)", "sphinx-reredirects (>=0.1.1,<0.2.0)"]
+docs = ["furo (>=2022.12.7,<2023.0.0)", "myst-parser (>=0.17.2,<0.19.0)", "sphinx (>=4.5,<6.0)", "sphinx-autobuild (>=2021.3.14,<2022.0.0)", "sphinx-copybutton (>=0.3.1,<0.6.0)", "sphinx-reredirects (>=0.1.1,<0.2.0)"]
 s3 = ["fs-s3fs (>=1.1.1,<2.0.0)"]
 testing = ["pytest (>=7.2.1,<8.0.0)", "pytest-durations (>=1.2.0,<2.0.0)"]
 
@@ -828,7 +826,7 @@ s3 = ["fs-s3fs"]
 [metadata]
 lock-version = "1.1"
 python-versions = "<3.12,>=3.7.1"
-content-hash = "50bc872dab09fb78241733665998dedb4ee796d58ec3fe75b719cffec0493a6c"
+content-hash = "23412355e09e3a194271f933a93d39e2beb04d3afd5546603cc47d9f83d55441"
 
 [metadata.files]
 appdirs = [
@@ -1092,6 +1090,7 @@ greenlet = [
     {file = "greenlet-2.0.2-cp27-cp27m-win32.whl", hash = "sha256:6c3acb79b0bfd4fe733dff8bc62695283b57949ebcca05ae5c129eb606ff2d74"},
     {file = "greenlet-2.0.2-cp27-cp27m-win_amd64.whl", hash = "sha256:283737e0da3f08bd637b5ad058507e578dd462db259f7f6e4c5c365ba4ee9343"},
     {file = "greenlet-2.0.2-cp27-cp27mu-manylinux2010_x86_64.whl", hash = "sha256:d27ec7509b9c18b6d73f2f5ede2622441de812e7b1a80bbd446cb0633bd3d5ae"},
+    {file = "greenlet-2.0.2-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:d967650d3f56af314b72df7089d96cda1083a7fc2da05b375d2bc48c82ab3f3c"},
     {file = "greenlet-2.0.2-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:30bcf80dda7f15ac77ba5af2b961bdd9dbc77fd4ac6105cee85b0d0a5fcf74df"},
     {file = "greenlet-2.0.2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:26fbfce90728d82bc9e6c38ea4d038cba20b7faf8a0ca53a9c07b67318d46088"},
     {file = "greenlet-2.0.2-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:9190f09060ea4debddd24665d6804b995a9c122ef5917ab26e1566dcc712ceeb"},
@@ -1100,6 +1099,7 @@ greenlet = [
     {file = "greenlet-2.0.2-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:76ae285c8104046b3a7f06b42f29c7b73f77683df18c49ab5af7983994c2dd91"},
     {file = "greenlet-2.0.2-cp310-cp310-win_amd64.whl", hash = "sha256:2d4686f195e32d36b4d7cf2d166857dbd0ee9f3d20ae349b6bf8afc8485b3645"},
     {file = "greenlet-2.0.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:c4302695ad8027363e96311df24ee28978162cdcdd2006476c43970b384a244c"},
+    {file = "greenlet-2.0.2-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:d4606a527e30548153be1a9f155f4e283d109ffba663a15856089fb55f933e47"},
     {file = "greenlet-2.0.2-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c48f54ef8e05f04d6eff74b8233f6063cb1ed960243eacc474ee73a2ea8573ca"},
     {file = "greenlet-2.0.2-cp311-cp311-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:a1846f1b999e78e13837c93c778dcfc3365902cfb8d1bdb7dd73ead37059f0d0"},
     {file = "greenlet-2.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3a06ad5312349fec0ab944664b01d26f8d1f05009566339ac6f63f56589bc1a2"},
@@ -1129,6 +1129,7 @@ greenlet = [
     {file = "greenlet-2.0.2-cp37-cp37m-win32.whl", hash = "sha256:3f6ea9bd35eb450837a3d80e77b517ea5bc56b4647f5502cd28de13675ee12f7"},
     {file = "greenlet-2.0.2-cp37-cp37m-win_amd64.whl", hash = "sha256:7492e2b7bd7c9b9916388d9df23fa49d9b88ac0640db0a5b4ecc2b653bf451e3"},
     {file = "greenlet-2.0.2-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:b864ba53912b6c3ab6bcb2beb19f19edd01a6bfcbdfe1f37ddd1778abfe75a30"},
+    {file = "greenlet-2.0.2-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:1087300cf9700bbf455b1b97e24db18f2f77b55302a68272c56209d5587c12d1"},
     {file = "greenlet-2.0.2-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:ba2956617f1c42598a308a84c6cf021a90ff3862eddafd20c3333d50f0edb45b"},
     {file = "greenlet-2.0.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:fc3a569657468b6f3fb60587e48356fe512c1754ca05a564f11366ac9e306526"},
     {file = "greenlet-2.0.2-cp38-cp38-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:8eab883b3b2a38cc1e050819ef06a7e6344d4a990d24d45bc6f2cf959045a45b"},
@@ -1137,6 +1138,7 @@ greenlet = [
     {file = "greenlet-2.0.2-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:b0ef99cdbe2b682b9ccbb964743a6aca37905fda5e0452e5ee239b1654d37f2a"},
     {file = "greenlet-2.0.2-cp38-cp38-win32.whl", hash = "sha256:b80f600eddddce72320dbbc8e3784d16bd3fb7b517e82476d8da921f27d4b249"},
     {file = "greenlet-2.0.2-cp38-cp38-win_amd64.whl", hash = "sha256:4d2e11331fc0c02b6e84b0d28ece3a36e0548ee1a1ce9ddde03752d9b79bba40"},
+    {file = "greenlet-2.0.2-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:8512a0c38cfd4e66a858ddd1b17705587900dd760c6003998e9472b77b56d417"},
     {file = "greenlet-2.0.2-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:88d9ab96491d38a5ab7c56dd7a3cc37d83336ecc564e4e8816dbed12e5aaefc8"},
     {file = "greenlet-2.0.2-cp39-cp39-manylinux2010_x86_64.whl", hash = "sha256:561091a7be172ab497a3527602d467e2b3fbe75f9e783d8b8ce403fa414f71a6"},
     {file = "greenlet-2.0.2-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:971ce5e14dc5e73715755d0ca2975ac88cfdaefcaab078a284fea6cfabf866df"},
@@ -1478,8 +1480,8 @@ simplejson = [
     {file = "simplejson-3.18.3.tar.gz", hash = "sha256:ebb53837c5ffcb6100646018565d3f1afed6f4b185b14b2c9cbccf874fe40157"},
 ]
 singer-sdk = [
-    {file = "singer_sdk-0.31.0-py3-none-any.whl", hash = "sha256:aa9329bd7e26f9e2bd59332468e064dd38f6df2dd6b7445e047d8008acd0dd65"},
-    {file = "singer_sdk-0.31.0.tar.gz", hash = "sha256:de8fdf00967dc13b4073dddad499799df2a1273806406b765ba55b671ea18b8a"},
+    {file = "singer_sdk-0.21.0-py3-none-any.whl", hash = "sha256:b789e0ede3f6f2bdeac5d2554f6c176ccdcbe25c3c1bf7a91d2915b436980fe3"},
+    {file = "singer_sdk-0.21.0.tar.gz", hash = "sha256:33404cc7d49f4dc0151eb30278e33285262c5b5a911533a19327787f11c2934f"},
 ]
 six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
